@@ -6,8 +6,42 @@
   Root - Changes the title bar colors for Windows 10's light & dark themes
   =======================================================================*/
 
+/*** BEGIN Firefox 77 (June 2, 2020) Override URL bar enlargement ***/
+
+  /* Compute new position, width, and padding */
+
+  #urlbar[breakout][breakout-extend] {
+    top: 5px !important;
+    left: -10px !important;
+    width: 1080px !important;
+    padding: 0px !important;
+  }
+  /* for alternate Density settings */
+  [uidensity="compact"] #urlbar[breakout][breakout-extend] {
+    top: 3px !important;
+  }
+  [uidensity="touch"] #urlbar[breakout][breakout-extend] {
+    top: 4px !important;
+  }
+
+  /* Prevent shift of URL bar contents */
+
+  
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding: 0 !important;
+ 
+  }
+  /* Do not animate */
+
+  #urlbar[breakout][breakout-extend] > #urlbar-background {
+    animation: none !important;;
+  }
 
 
+.urlbarView-body-inner {
+  border-top: 1px solid var(--urlbar-separator-color);
+}
 #urlbar[focused="true"] {
 --toolbar-field-focus-border-color: rgb(255,255,255) !important;
 theme property:toolbar_field_border_focus !important;
@@ -37,9 +71,9 @@ backdrop-filter: blur(2px) !important;
 }
 #urlbar-results {
 top:75px !important;
-  left: 135px !important; /* Override 0 */
-  right:90px !important; /* Override 0 */
-  max-width: 1080px !important;
+  left: 150px !important; /* Override 0 */
+  right:120px !important; /* Override 0 */
+  max-width: 1100px !important;
   margin-left: 0px !important;
   --item-padding-start: 0 !important;
   --item-padding-end: 0 !important;
