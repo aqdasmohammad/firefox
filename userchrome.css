@@ -6,14 +6,17 @@
   Root - Changes the title bar colors for Windows 10's light & dark themes
   =======================================================================*/
 
-/*** BEGIN Firefox 77 (June 2, 2020) Override URL bar enlargement ***/
-
   /* Compute new position, width, and padding */
-
-  #urlbar[breakout][breakout-extend] {
+ /*#urlbar[breakout][breakout-extend] {
     top: 5px !important;
     left: -10px !important;
-    width: 1080px !important;
+    width: 100%px !important;
+    padding: 0px !important;
+  }*/
+  #urlbar[breakout][breakout-extend] {
+    top: 5px !important;
+    left: 0px !important;
+    width: 100% !important;
     padding: 0px !important;
   }
   /* for alternate Density settings */
@@ -40,8 +43,14 @@
 
 
 .urlbarView-body-inner {
-  border-top: 1px solid var(--urlbar-separator-color);
+  border-top: 0px solid var(--urlbar-separator-color);
 }
+#urlbar[focused="true"] {
+--toolbar-field-focus-border-color: none !important;
+theme property:toolbar_field_border_focus !important;
+border: none !important;
+}
+
 #urlbar[focused="true"] {
 --toolbar-field-focus-border-color: rgb(255,255,255) !important;
 theme property:toolbar_field_border_focus !important;
@@ -61,23 +70,23 @@ border-radius: 0px !important; }
 border-radius: 0px !important;
 background-color: #2A2A2AC0 !important;
  margin-top:0px !important;
-backdrop-filter: blur(2px) !important;
+backdrop-filter: blur(28px) !important;
 }
 .urlbarView-row[selected] {
 border-radius: 0px !important;
 background-color: #2A2A2AC0 !important;
  margin-top:0px !important;
-backdrop-filter: blur(2px) !important;
+backdrop-filter: blur(28px) !important;
 }
 #urlbar-results {
 top:75px !important;
-  left: 150px !important; /* Override 0 */
-  right:120px !important; /* Override 0 */
-  max-width: 1100px !important;
+  left: 135px !important; /* Override 0 */
+  right:90px !important; /* Override 0 */
+  max-width: 1080px !important;
   margin-left: 0px !important;
   --item-padding-start: 0 !important;
   --item-padding-end: 0 !important;
--webkit-backdrop-filter: blur(20px) !important;
+-webkit-backdrop-filter: blur(28px) !important;
  }
 
 
@@ -91,12 +100,12 @@ border-color: #696969 !important;
 background-image: url(./noise-512x512.png) !important;
 background-color: #2A2A2AC0 !important;
 background-size: 100% !important; 
-backdrop-filter: blur(8px) !important;
+backdrop-filter: blur(28px) !important;
  position:fixed !important; 
  top:80px !important;
-  left: 111px !important; /* Override 0 */
-  right:111px !important; /* Override 0 */
-  max-width: 1080px !important;
+  left: 119px !important; /* Override 0 */
+  right:101px !important; /* Override 0 */
+  max-width: 1065px !important;
 box-shadow: 0 10px 32px -6px black !important;
 -webkit-box-shadow: 0 15px 50px -6px var(--dark-top-level-bg-color) !important;
 -moz-box-shadow: 0 15px 50px -6px var(--dark-top-level-bg-color) !important;
